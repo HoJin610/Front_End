@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>배열활용</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>배열 추가 삭제</legend>
+        <input type="text" id="data1"><br/>
+        <input type="button" value="push"    onclick="arrPush()">
+        <input type="button" value="pop"     onclick="arrPop()">
+        <input type="button" value="unshift" onclick="arrUnshift()">
+        <input type="button" value="shift"   onclick="arrShift()">
+    </fieldset>
+
+    <fieldset>
+        <legend>배열의 기능1</legend>
+        <button onclick="arrJoin()">join</button>
+        <button onclick="arrSplit()">split</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>배열의 기능2</legend>
+        arrK = ["마", "가", "다", "바", "나", "라"] <br/>
+        <button onclick="arrDelete()">delete</button>
+        <button onclick="arrSplice()">splice</button>
+        <button onclick="arrAddSplice()">addSplice</button>
+        <br/>
+        <input type="text" id="txt">
+        <button onclick="arrDelSplice()">addDelSplice</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>배열의 기능3</legend>
+        <button onclick="arrSlice()">slice</button>
+        <button onclick="arrConcat()">concat</button>
+    </fieldset>
+</body>
+
+<script>
+    let arr = [];
+    let idx = 0;
+
+    for(idx=0; idx<5; idx++){
+        arr[idx] = idx+1;
+        // arr[0] = 1;
+        // arr[1] = 2;
+        // arr[2] = 3;
+        // arr[3] = 4;
+        // arr[4] = 5;
+    }
+
+    console.log(`idx : ${idx}`);    // idx 값 : 5
+    console.log(arr);               // arr 값 : [1, 2, 3, 4, 5]
+
+    // push() : 배열의 맨 뒤에 값을 추가하는 기능
+    function arrPush(){
+        let data1 = document.getElementById('data1');
+        let value = data1.value;
+
+        arr.push(value);
+        ++idx;
+        console.log(arr);
+        
+        data1.value = "";
+        data1.focus();
+    }
+
+    // pop() : 배열의 맨 뒤에 값을 삭제하는 기능
+    function arrPop(){
+        arr.pop();
+        --idx;
+        console.log(arr);
+
+        data1.value = "";
+        data1.focus();
+    }
+
+    // unshift() : 배열의 맨 앞에 값을 추가하는 기능
+    function arrUnshift(){
+        let data1 = document.getElementById('data1');
+        let value = data1.value;
+
+        arr.unshift(value);
+        ++idx;
+        console.log(arr);
+
+        data1.value = "";
+        data1.focus();
+    }
+
+    // shift() : 배열의 맨 앞에 값을 삭제하는 기능
+    function arrShift(){
+        arr.shift();
+        --idx;
+        console.log(arr);
+
+        data1.value = "";
+        data1.focus();
+    }
+
+    // join() : 배열에 있는 데이터를 합친다.
+    function arrJoin(){
+        let phone = ["010", "1234", "1111"];
+
+        console.log(phone);
+        console.log(phone.join(''));
+        console.log(phone.join('-'));
+    }
+
+    // split() : 데이터를 나눠서 배열로 만든다.
+    function arrSplit(){
+        let txt1 = "질량의 크기는 부피와 비례하지 않는다";
+
+        let words = txt1.split(' ');
+
+        console.log(words);
+        console.log(typeof words);          // 데이터 타입 : object
+        console.log(Array.isArray(words));  // 배열여부 : true
+
+        // "010-1234-5678" 데이터를
+        // "01012345678"로 바꾸기
+        let phone = "010-1234-5678";
+
+        let a = phone.split('-');
+
+        console.log(a.join(''));
+        
+        console.log(phone.split('-').join(''));
+    }
+
+    let arrK = ["마", "가", "다", "바", "나", "라"];
+
+    // delete : 연산자, 실제로 요소를 삭제하는 것이 아니라 변경
+    function arrDelete(){
+        delete arrK[2];
+        console.log(`arrK : ${arrK}`);
+
+        arrK[2] = "new";
+        console.log(`arrK : ${arrK}`);
+    }
+
+    // splice() : 
+    function arrSplice(){
+        // splice(i, n);
+        // i번 인덱스부터 n개 삭제
+        console.log(arrK);
+        arrK.splice(2,2);
+        arrK.splice(0,2);
+        console.log(arrK);
+    }
+
+    function arrAddSplice(){
+        // splice(i, n, "m1", "m2");
+        // i번 인덱스부터 n개 삭제하고 "m"값을 추가한다.
+        arrK.splice(1, 4, "하", "지", "마");
+        console.log(arrK);
+    }
+
+    function arrDelSplice(){
+        let txt = document.getElementById('txt').value;
+        let idx = arrK.indexOf(txt);
+        // indexOf() : 데이터 txt의 값이 속한 배열의 인덱스 번호를 나타낸다.
+        // 해당하는 데이터가 없을 경우 -1을 반환한다.
+
+        console.log(`idx : ${idx}`);
+
+        // 입력한 값이 존재하면 해당 배열 삭제하기
+        if(idx != -1){  
+            alert(`${arrK[idx]}를 삭제했습니다.`)
+            arrK.splice(idx, 1);
+            console.log(arrK);
+        }else{
+            alert('해당하는 값이 존재하지 않습니다.')
+        }
+    }
+
+    let arr1 = [1, 2, 3, 4, 5];
+    let arr2 = ['a', 'b', 'c', 'd', 'e'];
+
+    function arrSlice(){
+        // slice(i, n) : 인덱스 i번째 부터 보여주고, 인덱스 n번째 부터 잘라냄
+        let newArr = arr1.slice(1, 3);  // 예상결과 :[2, 3];
+
+        console.log(arr1);
+        console.log(newArr);
+
+        // arr2에서 c, d, e만 출력되도록 slice 사용
+        // slice(i) : 인덱스 i번째부터 끝까지 보여준다.
+        let newArr1 = arr2.slice(2);
+
+        console.log(newArr1);
+    }
+
+    function arrConcat(){
+        console.log(arr);
+        console.log(arr1);
+        console.log(arr2);
+        console.log(arr.concat(arr1, arr2));
+    }
+
+</script>
+
+</html>

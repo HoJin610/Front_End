@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>변수(variable)</title>
+</head>
+
+<body>
+    
+</body>
+
+<script>
+    // 변수(variable) : 변하는 수(데이터)를 저장하는 곳
+    // var, let, const
+
+    // int num = 10;
+    // int num = 20;
+
+    // 자바스크립트에서는 이미 선언 된 변수를 다시 선언할 수 있다.
+    var num = 10;
+    var num = 20;
+
+    // var   : 한번 선언된 변수를 다시 선언할 수 있다.
+    // let   : 한번 선언된 변수를 다시 선언할 수 없다.
+    // const : 한번 선언된 변수를 다시 선언할 수 없다.
+
+    let numb = 10;
+    // let numb = 20;
+
+    const number = 10;
+    // const number = 20;
+
+    // var : 선언된 변수에 데이터를 재할당(대입) 가능
+    // let : 선언된 변수에 데이터를 재할당(대입) 가능
+    // const : 선언된 변수에 데이터를 재할당(대입) 불가능
+
+    num = 30;
+    numb = 20;
+    number = 200;
+
+    console.log(`num : ${num}`);        // 30
+    console.log(`numb : ${numb}`);      // 100
+    console.log(`number : ${number}`);  // 200
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- !DOCTYPE 태그 -->
+<!-- 문서의 버전을 나타낸다. 현재 버전은 html5를 기준으로 한다. -->
+<!-- 생략이 가능하지만 하위호환성을 위해 작성할 것을 권장 -->
+
+<html lang="ko">
+<!-- html 태그 : 문서 전체의 범위 -->
+<!-- lang 사용언어 : en(영어), ko(한국어) -->
+
+
+<head>
+<!-- head 태그 : 문서의 정보를 나타내는 태그 -->
+<!-- 제목, 문서설명, 사용파일 위치, 스타일(css)등 보이지 않는 정보 -->
+
+    <!-- meta 태그 : 인코딩, 제작자, 내용, 키워드 등을 검색엔진이나 브라우저에 제공 -->
+    <meta charset="UTF-8">
+    <!-- 문자가 인코딩 되는 방식 charset : UTF-8로 설정 -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport : 사용자의 모바일 디바이스에서 웹페이지가 표시되는 방식 -->
+    <!-- width=device-width, initial-scale=1.0
+        : 웹 페이지의 뷰포트 가로너비를 다양한 모바일 디바이스의 가로너비와
+          일치시키고, 화면의 확대/축소 없이 페이지를 보여준다. -->
+
+    <!-- author : 제작자, date : 제작일, description : 설명 -->
+    <meta name="author" content="본인id" />
+    <meta name="date" content="23.09.21" />
+    <meta name="description" content="html구조" />
+
+    <!-- link 태그 : 외부문서를 가져와서 연결할 때 사용 -->
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+
+    <!-- style태그 : 스타일(css)를 html문서 안에서 작성하는 경우 -->
+    <style>
+        body {
+            color : red;
+        }
+    </style>
+
+    <!-- title태그 : 브라우저에 출력되는 제목 -->
+    <title>HTML 구조</title>
+</head>
+
+<!-- body 태그 : 문서의 구조를 나타내는 태그 -->
+<!-- 사용자 화면(브라우저)을 통해서 실제로 보여지는 내용을 작성 -->
+<body>
+
+    <h1>안녕하세요!</h1>
+
+    <h2>방정우 지각(?), 임지영, 김민정 지각</h2>
+
+    <!-- 
+        요소(Element) : <태그> 내용 </태그>
+
+        단일태그 : <태그> or <태그/> 로 이루어진 요소
+        <태그/> : html5 부터 사용(안전함) vs <태그> (편리함)
+
+        <태그 속성(Attribute) = "값(value)">
+        <meta name="date" content="23.09.21" />
+        meta태그, 속성=> name, content, name 속성값 => date, content 속성값 = 23.09.21
+     -->
+    
+</body>
+
+<!-- script 태그 : JavaScript를 html문서에서 작성할 때 사용 -->
+<script>
+
+</script>
+
+<!-- src(경로)에 js파일(자바스크립트 파일)을 불러올 때 사용 -->
+<script src="main.js"></script>
+</html>

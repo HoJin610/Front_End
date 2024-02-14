@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>자바스크립트 자료형</title>
+</head>
+
+<body>
+    
+</body>
+
+<script>
+
+    /* 
+        자바스크립트의 데이터 종류(자료형)
+        (1) String
+        (2) Number
+        (3) Boolean
+
+        (4) Undefined
+        (5) Null
+        (6) Object
+        (7) Array
+    */
+
+    // String(문자 데이터) - 따옴표 사용
+    var myName = "hojiniyam";       // 큰따옴표 사용
+    var email = 'icia@naver.com'    // 작은따옴표 사용
+    var hello = `Hello ${myName}`; // backtic(백틱) 사용 : ${ } 사용해서 변수 사용가능
+    //var hello2 = "hello" + maName;
+
+    // System.out.println(myName);
+    console.log(myName);
+    console.log(email);
+    console.log(hello);
+
+    // [2] Number(숫자 데이터) : 정수 및 소숫점을 포함한 실수
+    var num = 123;
+    var dNum = 1.23;
+
+    console.log(num);
+    console.log(dNum);
+
+    // [3] Boolean(논리 데이터) : 참(true)과 거짓(false)를 판별하는 데이터
+    var run = true;
+    var checked = false;
+
+    // [4] Undefined : 값이 할당(정의)되지 않은 상태
+    var undef;
+    var obj = {abc : 123};
+
+    console.log(undef);     // undefined
+    console.log(obj.abc);   // 123
+    console.log(obj.xyz);   // undefined
+
+    // [5] Null : 변수에 의도적으로 비어있는 값(null)을 대입할 때
+    var empty = null;
+    console.log(empty);     // null
+
+    // [6] Object(객체 데이터) : 여러개의 데이터를 { } 안에 key : Value 형태로 저장한다.
+    var student = {
+        stuNum : 15,
+        stuName : 'icia',
+        isVaild : true
+    };
+
+    console.log(student);
+    console.log(student.stuNum);
+    console.log(student.stuName);
+    console.log(student.isVaild);
+
+    // [7] Array(배열 데이터) : 여러개의 데이터를 [ ] 안에 순차적 저장, 다른 타입 데이터도 저장 가능
+    var fruits = ['Apple', 12, true];
+
+    console.log(fruits);        // ['Apple', 12, true]
+    console.log(fruits[0]);     // Apple
+    console.log(fruits[1]);     // 12
+    console.log(fruits[2]);     // true
+
+    console.log(fruits[3]);     // undefined
+
+</script>
+
+</html>

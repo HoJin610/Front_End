@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>계산기</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="result">    
+            0
+        </div>
+
+        <div id="btn">
+            <div class="group">
+                <div id="ac" onclick="clean()">
+                    AC
+                </div>
+
+                <div id="enter" onclick="oper()">
+                    Enter    
+                </div>
+
+            </div>
+
+            <div class="group">
+                <div class="num" onclick="btn('7')">
+                    7
+                </div>
+
+                <div class="num" onclick="btn('8')">
+                    8
+                </div>
+
+                <div class="num" onclick="btn('9')">
+                    9
+                </div>
+
+                <div class="oper" onclick="btn('+')">
+                    +
+                </div>
+
+            </div>
+
+            <div class="group">
+                <div class="num" onclick="btn('4')">
+                    4
+                </div>
+
+                <div class="num" onclick="btn('5')">
+                    5
+                </div>
+
+                <div class="num" onclick="btn('6')">
+                    6
+                </div>
+
+                <div class="oper" onclick="btn('-')">
+                    -
+                </div>
+
+            </div>
+
+            <div class="group">
+                <div class="num" onclick="btn('1')">
+                    1
+                </div>
+
+                <div class="num" onclick="btn('2')">
+                    2
+                </div>
+
+                <div class="num" onclick="btn('3')">
+                    3
+                </div>
+
+                <div class="oper" onclick="btn('*')">
+                    *
+                </div>
+
+            </div>
+
+            <div class="group">
+                <div class="num0" onclick="btn('0')">
+                    0
+                </div>
+
+                <div class="num" onclick="btn('.')">
+                    .
+                </div>
+
+                <div class="oper" onclick="btn('/')">
+                    /
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script src="./main.js">
+
+</script>
+
+</html>

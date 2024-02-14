@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title></title>
+</head>
+
+<body>
+    <!-- 네이버 검색 -->
+    <fieldset>
+        <legend>네이버 검색</legend>
+        <!-- 
+            https://search.naver.com/search.naver
+            ?
+            query=icia
+         -->
+        <form action="https://search.naver.com/search.naver">
+            <input type="text" name="query"/>
+            <input type="submit" value="검색"/>
+        </form>
+    </fieldset>
+
+    <!-- 구글 검색창 만들기! -->
+    <fieldset>
+        <legend>구글 검색</legend>
+        <form action="https://www.google.com/search">
+            <input type="text" name="q">
+            <input type="submit" value="검색">
+        </form>
+    </fieldset>
+
+    <!-- 다음 검색 -->
+    <fieldset>
+        <legend>다음 검색</legend>
+        <form action="https://search.daum.net/search">
+            <input type="text" name="q">
+            <input type="submit" value="검색">
+        </form>
+    </fieldset>
+</body>
+
+</html>

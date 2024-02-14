@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>입력태그</title>
+</head>
+
+<body>
+    <!-- form 태그의 action 속성값에 이동할 페이지의 주소를 입력한다. -->
+    <!-- method : get=> 주소창에 정보를 보여준다, post로 할 경우 안보여준다. -->
+    <form action="https://www.daum.net">
+
+        <!-- form 태그 안에 있는 input 태그의 name 속성으로 지정한 데이터를 전송한다. -->
+        <fieldset>
+            <legend>text & password</legend>
+            <p>텍스트와 비밀번호 타입</p>
+
+            <label>아이디 : <input type="text" name="id" id="id"/></label><br/>
+            <label>비밀번호 : <input type="password" name="pw" id="pw"/></label>
+
+            <!-- id : 해당 속성값을 html문서 내에서 사용할 경우 -->
+            <!-- name : 해당 속성값을 action의 주소에서 사용할 경우 -->
+
+        </fieldset>
+
+        <fieldset>
+            <legend>버튼 타입</legend>
+            <input type="button" value="버튼1" onclick="alert('버튼을 클릭했습니다.')">
+            <input type="button" value="버튼2" onclick="btnMetod()">
+        </fieldset>
+
+        <fieldset>
+            <legend>radio</legend>
+            <p>라디오 타입</p>
+            남성 <input type="radio" name="gender" value="남"/>
+            여성 <input type="radio" name="gender" value="여"/>
+            <!-- 라디오 버튼은 name값이 같아야 한다. -->
+            <br/><br/>
+            <p>커피 메뉴 선택</p>
+            아메리카노 <input type="radio" name="coffee" value="아메"/>
+            카페라떼 <input type="radio" name="coffee" value="라떼"/>
+            바닐라라떼 <input type="radio" name="coffee" value="바닐라"/>
+            자몽허니블랙티 <input type="radio" name="coffee" value="자몽허니"/>
+        </fieldset>
+
+        <fieldset>
+            <legend>checkbox</legend>
+            <p>체크박스 타입</p>
+            좋아하는 과목을 선택해 주세요: <br/>
+            Java <input type="checkbox" name="subj" value="java"/>
+            Database <input type="checkbox" name="subj" value="db"/>
+            HTML <input type="checkbox" name="subj" value="html"/>
+            CSS <input type="checkbox" name="subj" value="css"/>
+            Jdbc <input type="checkbox" name="subj" value="jdbc"/>
+            JavaScript <input type="checkbox" name="subj" value="javascript"/>
+        </fieldset>
+
+        <fieldset>
+            <legend>hidden</legend>
+            <p>숨김 정보</p>
+            <input type="hidden" name="hiddenValue" value="숨김정보1">
+        </fieldset>
+
+        <fieldset>
+            <legend>file</legend>
+            <p>파일 업로드</p>
+            <input type="file" name="fileUpload">
+        </fieldset>
+
+        <fieldset>
+            <legend>color</legend>
+            <p>색상 타입</p>
+            <input type="color" name="color1">
+        </fieldset>
+
+        <fieldset>
+            <legend>date</legend>
+            <p>날짜타입</p>
+            출국일 : <input type="date" name="date1"/>
+            입국일 : <input type="date" name="date2"/>
+        </fieldset>
+
+        <fieldset>
+            <legend>email</legend>
+            <p>이메일 타입</p>
+            <input type="email" name="email1"/>
+            <!-- @ 를 작성하지 않으면 오류 메세지가 발생! -->
+            <!-- submit버튼과 함께 확인! -->
+        </fieldset>
+
+        <fieldset>
+            <legend>select</legend>
+            <p>선택 버튼</p>
+            <!-- input 태그가 아닌 select 태그 사용 -->
+            <!-- select 태그는 option 태그와 짝꿍 -->
+            <select name="myCar">
+                <option value="hd">현대</option>
+                <option value="kia">기아</option>
+                <option value="tsla">테슬라</option>
+                <option value="bmw">bmw</option>
+                <option value="audi">아우디</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>submit & reset</legend>
+            <p>전송(제출)과 새로(다시) 작성</p>
+            <input type="submit" value="전송">
+            <input type="reset" value="다시작성">
+        </fieldset>
+
+    </form>
+</body>
+
+<script>
+    function btnMetod(){
+        // 함수에서 할 일
+        location.href = "https://www.google.com";
+    }
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+body{
+    background-color: black;
+    color: salmon;
+}
+
+h1{
+    font-size: 10px;
+    color: yellow;
+    border: 2px inset violet;
+    /*      2px : 선굵기 inset : 선종류 violet : 선색상 */
+}
+
+h2{
+    color: aliceblue;
+    border: 2px solid darkblue;
+}
+
+h3{
+    color: antiquewhite;
+    border: 2px dashed darkcyan;
+}
+
+h4{
+    color: aqua;
+    border: 2px double darkgoldenrod;
+}
+
+h5{
+    color: aquamarine;
+    border: 2px groove darkgray;
+}
+
+h6{
+    color: azure;
+    border: 2px ridge darkgreen;
+}
+
+p{
+    background-color: beige;
+    color: black;
+}

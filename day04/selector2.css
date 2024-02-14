@@ -1,0 +1,37 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+}
+
+/* [1] HOVER : 선택자 요소에 마우스 커서가 올라가 있는 동안 선택 */
+.box:hover{
+    width: 300px;
+    background-color: royalblue;
+}
+
+/* [2] ACTIVE : 선택자 요소를 클릭하고 있는 동안 */
+.box:active{
+    width: 200px;
+    background-color: seagreen;
+}
+
+a{
+    color: red;
+    text-decoration: none;
+}
+
+/* [3] VISITED : 방문한 사이트의 스타일을 변경 */
+a:visited{
+    color: skyblue;
+}
+
+a:hover{
+    color: blue;
+    text-decoration: underline;
+}
+
+/* [4] FOCUS : 선택자 요소가 포커스 되면 선택 => input태그 */
+input:focus{
+    background-color: lightgrey;
+}

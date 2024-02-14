@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>이벤트</title>
+</head>
+
+<body onload="movePage()">
+    <div id="mouse" 
+        onclick="mouseEvent('11')" 
+        onmouseover="mouseEvent('over')" 
+        onmouseout="mouseEvent(true)">
+        
+
+    </div>
+
+    <fieldset>
+        <legend>현재시간</legend>
+        <h3 id="now">현재 시각은?</h3>
+        <button onclick="getNow()">클릭</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>자동차 선택</legend>
+        <select id="myCar" onchange="selCar()">
+            <option value="hd">현대</option>
+            <option value="kia">기아</option>
+            <option value="tsla">테슬라</option>
+            <option value="bmw">bmw</option>
+            <option value="audi">아우디</option>
+        </select>
+        <h3 id="carName">원하는 자동차를 선택하세요</h3>
+    </fieldset>
+
+    <fieldset>
+        <legend>KeyEvent</legend>
+        <h3 id="typing">작성 내용</h3>
+        <h3 id="result">사용한 이벤트</h3>
+        <input type="text" id="kbd" onkeyup="txtChange()">
+    </fieldset>
+</body>
+
+<script>
+    /*
+        [1] onclick     : 마우스를 클릭할 경우 실행
+        [2] onmouseover : 마우스가 요소 위로 올라왔을 경우 실행
+        [3] onmouseout  : 마우스가 요소 밖으로 벗어났을 경우 실행
+        [4] onchange    : 해당 요소에 변화가 있을 경우 실행
+        [5] onkeyup     : 키보드의 눌린 키가 떨어졌을 경우 실행
+        [6] onkeydown   : 키보드의 키를 누를 경우 실행
+        [7] onkeypress  : 키보드를 통해 입력할 경우 실행(press > down)
+        [8] onload      : 브라우저가 모든 페이지를 로딩한 후 실행
+    */
+    let mouse = document.getElementById("mouse");
+
+    function mouseEvent(evt){
+        if(evt == 11){
+            mouse.innerHTML = "mouse click!";
+        } else if(evt == 'over') {
+            mouse.innerHTML = "mouse over!";
+        } else if(evt == true) {
+            mouse.innerHTML = "mouse out!"
+        }
+    }
+
+    function getNow(){
+        document.getElementById("now").innerHTML = Date();
+    }
+
+    function selCar(){
+        let myCar = document.getElementById("myCar").value;
+        let carName = document.getElementById("carName");
+
+        carName.innerHTML = myCar;
+    }
+
+    function keyEvent(evt){
+
+        
+        let result = document.getElementById('result');
+        let typing = document.getElementById('typing');
+
+        if(evt == 'up'){
+            result.innerHTML = "key up!";
+        } else if (evt == 'down'){
+            result.innerHTML = "key down!";
+        } else if (evt == 'press'){
+            result.innerHTML = "key press!";
+            let kbd = document.getElementById('kbd').value;
+            document.getElementById('typing').innerHTML = kbd;
+        }
+    }
+
+    function txtChange(){
+        let kbd = document.getElementById('kbd').value;
+        document.getElementById('typing').innerHTML = kbd;
+    }
+
+    function movePage(){
+        alert('로딩이 완료됐습니다.');
+        location.href="https://www.google.com/";
+    }
+</script>
+
+</html>

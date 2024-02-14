@@ -1,0 +1,21 @@
+/* 가상 요소 선택자 */
+
+/* BEFORE */
+.box::before{
+    content: "앞에 내용을 삽입!";
+}
+
+/* AFTER */
+.box::after{
+    content: "뒤에 내용을 삽입!";
+}
+
+/* 해당 속성을 포함한 요소 선택 */
+[disabled]{
+    color: red;
+}
+
+/* 속성 A(type)의 값이 B(password)인 요소 선택 */
+[type="password"]{
+    color: blue;
+}

@@ -1,0 +1,33 @@
+/* 
+    - 상속되는 css 속성 : 모두 글자/문자 관련 속성 (모든 속성이 상속x)
+    1) font-style : 기울기
+    2) font-weight : 굵기
+    3) font-size : 크기
+    4) line-height : 줄 높이
+    5) font-family : 서체
+    6) color : 글자색
+    7) text-align : 정렬
+    등등...
+*/
+
+.animal{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: '궁서';
+    line-height: 100px;
+    color: red;
+    text-align: center;
+}
+
+.parent{
+    width: 300px;
+    height: 100px;
+    background-color: orange;
+}
+
+.child{
+    width: 100px;
+    height: inherit;    /* inherit : 부모 요소의 스타일을 강제 상속 */
+    background-color: red;
+}

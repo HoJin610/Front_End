@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>함수</title>
+</head>
+
+<body>
+    <!-- input태그를 사용해서 버튼 4개 생성 -->
+    <!-- 더하기, 빼기, 곱하기, 나누기 버튼 생성 -->
+
+    <input type="button" value="더하기" onclick="sum()"/>
+    <input type="button" value="빼기" onclick="minus()"/>
+    <input type="button" value="곱하기" onclick="multi()"/>
+    <input type="button" value="나누기" onclick="divide()"/>
+
+    <br/><hr/><br/>
+
+    <div id="result">결과값</div>
+</body>
+
+<script>
+    /*
+        자바에서 method 만들때
+
+        데이터타입 method이름(){
+            // 데이터 타입이 void타입이 아닐 경우
+            return 데이터타입의 값;
+        }
+    */
+
+    /*
+        자바스크립트에서 함수 생성시
+        function 함수이름(){
+            (return 값은 생략가능)
+        }
+    */
+
+    let a = 3;
+    let b = 4;
+
+    function sum(){
+
+        document.getElementById("result").innerHTML = "a + b = " + (a+b);
+
+        // return a + b ;
+    }
+
+    function minus(){
+        document.getElementById("result").innerHTML = "a - b = " + (a-b);
+    }
+
+    function multi(){
+        document.getElementById("result").innerHTML = "a * b = " + (a*b);
+    }
+
+    function divide(){
+        document.getElementById("result").innerHTML = "a / b = " + (a/b);
+    }
+</script>
+
+</html>

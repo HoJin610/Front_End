@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>회원가입</title>
+</head>
+
+<body>
+    <form action="https://www.icia.co.kr">
+    <table>
+        <caption style="font-size: 25px; margin-bottom: 10px;"><strong>회원가입 페이지</strong></caption>
+        <tr>
+            <th>항목</th>
+            <th>내용</th>
+        </tr>
+        <tr>
+            <th>아이디</th>
+            <td>
+                <input type="text" name="id" id="id"/>
+            </td>
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td>
+                <input type="password" name="pw" id="pw"/>
+            </td>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <td>
+                <input type="text" name="name" id="name">
+            </td>
+        </tr>
+        <tr>
+            <th>성별</th>
+            <td>
+                남성 <input type="radio" name="gender" value="남"/>
+                여성 <input type="radio" name="gender" value="여"/>
+            </td>
+        </tr>
+        <tr>
+            <th>생년월일</th>
+            <td>
+                <input type="date" name="date"/>
+            </td>
+        </tr>
+        <tr>
+            <th>연락처</th>
+            <td>
+                <input type="text" name="phone" id="phone">
+            </td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td>
+                <input type="email" name="email"/>
+            </td>
+        </tr>
+        <tr>
+            <th>좋아하는 과목</th>
+            <td>
+                HTML <input type="checkbox" name="subj" value="html"/>
+                DB <input type="checkbox" name="subj" value="db"/>
+                JAVA <input type="checkbox" name="subj" value="java"/>
+                AI <input type="checkbox" name="subj" value="ai"/>
+            </td>
+        </tr>
+        <tr>
+            <th>좋아하는 색깔</th>
+            <td>
+                <input type="color" name="color">
+            </td>
+        </tr>
+        <tr>
+            <th>사진 업로드</th>
+            <td>
+                <input type="file" name="fileUpload">
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <input type="submit" value="가입">
+                <input type="reset" value="다시 작성">
+            </th>
+        </tr>
+    </table>
+</form>
+</body>
+
+</html>

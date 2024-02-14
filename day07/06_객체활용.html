@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>객체활용</title>
+</head>
+
+<body>
+    
+</body>
+
+<script>
+    // Account 객체 생성
+    let Account = {};
+
+    // key : value
+    // balance(잔액) : 0
+    Account.balance = 0;        // 기존에 없던 키 : 추가
+
+    // 객체 함수 생성
+    // (1) 입금(deposit) 함수
+    Account.deposit = function (amount){    // amount : 금액
+        this.balance += amount;
+        // this.balance = this.balance + amount;
+    }
+
+    // (2) 출금(withdraw) 함수
+    Account.withdraw = function(amount){
+        if(this.balance >= amount){
+            this.balance -= amount;
+        } else{
+            alert('잔액이 부족합니다.');
+        }
+    }
+
+    // (3) 잔액조회(toString) 함수
+    Account.toString = function(){
+        return `계좌잔액 : ${this.balance}`;
+    }
+
+    ////////////////////////////////////////////////////////
+
+    // 10000원 입금
+    Account.deposit(10000);
+    console.log(Account.toString());
+
+    // 20000원 입금
+    Account.deposit(20000);
+    console.log(Account.toString());
+
+    // 5000원 출금
+    Account.withdraw(5000);
+    console.log(Account.toString());
+
+    // 50000원 출금
+    Account.withdraw(50000);
+    console.log(Account.toString());
+
+</script>
+
+</html>

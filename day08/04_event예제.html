@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>이벤트 예제</title>
+</head>
+
+<body>
+    <!-- div요소에 대한 이벤트 예제 -->
+    <div id="box"></div>
+</body>
+
+<script>
+    // div 상자를 클릭할 경우
+    // 상자 안에 `click` 이라는 메세지가 뜨고
+    // 배경색이 `orange`로 바뀌게 만들어라
+    // addEventListener 사용!
+
+    let box = document.getElementById("box");
+
+    box.addEventListener("click", () =>{
+        box.innerHTML = "click";
+        box.style.backgroundColor = "orange";
+    });
+
+    box.addEventListener("dblclick", () =>{
+        box.innerHTML = "dblclick";
+        box.style.backgroundColor = "red";
+    });
+
+    box.addEventListener("mouseenter", () =>{
+        box.innerHTML = "mouseenter";
+        box.style.backgroundColor = "blue";
+    });
+
+    box.addEventListener("mouseleave", () =>{
+        box.innerHTML = "mouseleave";
+        box.style.backgroundColor = "green";
+    });
+</script>
+
+</html>

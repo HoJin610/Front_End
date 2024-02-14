@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 태그</title>
+</head>
+<body>
+    <h1>상대경로</h1>
+    <img src="urban-20230228112910009385.jpg" alt="1번사진" width="300px" />
+    <!-- 
+        img 태그 : 단일태그, 인라인 요소
+        img 태그 속성
+        (1) src : 이미지 경로
+        (2) alt : 이미지 설명
+        (3) width : 이미지 가로 너비
+        (4) height : 이미지 세로 너비
+
+        ※ 원본비율을 유지하기 위해 width나 height 둘중 하나만 사용하는 것을 권장
+     -->
+
+     <!-- 
+        (1) 상대경로
+        (2) 절대경로
+        (3) 인터넷주소
+      -->
+
+    <!-- 상대경로 : 현재폴더(day02)를 기준으로 자원 경로를 표현하는 방식 -->
+    <!-- 현재폴더(day02) : ./파일명 -->
+    <img src="./urbanbrush-20220801083851022216.jpg" alt="2번사진" width="300px" />
+
+    <!-- 하위폴더(image) : ./하위폴더명/파일명 -->
+    <img src="./image/xp8tqpzvpnkze1up.jpg" alt="3번사진" width="300px" />
+
+    <!-- 상위폴더(day01) : ../상위폴더명/파일명 -->
+    <img src="../day01/037181ec098f4e269be53e1f67eb81e320180327102629.jpg" alt="4번사진" width="300px" />
+
+    <h1>절대경로</h1>
+    <!-- 절대경로 : 현재폴더(day02)에 상관없이 디렉토리(/) 기준으로 자원경로를 표현하는 방식 -->
+    <img src="C:/Users/user/Desktop/05271986_1_960.jpg" alt="5번사진" width="300px" />
+
+    <h1>인터넷주소</h1>
+    <img src="https://trboard.game.onstove.com/Data/TR/20170917/23/636412869941456754.png" alt="인터넷주소사진" height="300px" />
+</body>
+</html>

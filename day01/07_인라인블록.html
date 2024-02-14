@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        /* class = "i1" 요소의 배경색을 royalblue로 설정 */
+        /* a, span, strong태그의 배경색을 royalblue로 설정 */
+        a, span, strong{
+            background-color: royalblue;
+        }
+
+        /* class = "b1" 요소의 배경색을 orange로 설정 */
+        /* p, h2, div태그의 배경색을 orange로 설정 */
+        p, h2, div{
+            background-color: orange;
+        }
+
+    </style>
+    <title>인라인블록</title>
+</head>
+<body>
+    <!-- 
+        인라인 요소 : 글자를 만들기 위한 요소
+        (1) 줄바꿈이 일어나지 않는다.
+        (2) 요소의 내용만큼 영역을 가진다.
+        (3) 인라인 요소로는 a, img, strong, em, span태그 등이 있다.
+
+        블록 요소 : 상자(레이아웃)를 만들기 위한 요소
+        (1) 기본적으로 줄바꿈이 일어나는 형태
+        (2) 영역의 너비가 상위 영역의 전체 너비만큼 되는 형태
+        (3) 블록 요소로는 h#, p, div태그 등이 있다.
+
+        인라인 요소와 블록 요소의 규칙!
+        (1) 대부분 요소는 같은 형태의 다른 요소를 포함할 수 있다.
+            : 블록 요소 안에는 블록 요소, 인라인 요소 안에는 인라인 요소
+        (2) 블록 요소 안에 인라인 요소를 포함할 수 있다.
+        (3) 인라인 요소 안에는 블록 요소를 포함할 수 없다. 
+        
+        ※ 블록 요소     : 인라인 요소 포함(O), 블록 요소 포함(O)
+        ※ 인라인 요소   : 인라인 요소 포함(O), 블록 요소 포함(X)
+        
+     -->
+     <strong class="i1">strong태그는 인라인 요소</strong>
+     <a href="#">a태그는 인라인 요소</a>
+     <span class="i1">span태그는 인라인 요소</span>
+     <hr/>
+     <h2 class="b1">h#태그는 블록요소</h2>
+     <p class="b1">p태그는 블록요소</p>
+     <div class="b1">div태그는 블록요소</div>
+
+     <div>div태그 안에 <p>p태그</p>를 사용할 수 있을까요?</div>
+     <p>p태그 안에 <span>span태그</span>를 사용할 수 있을까요?</p>
+     <strong>strong태그 안에 <h2>h#태그</h2>를 사용할 수 있을까요?</strong>
+</body>
+</html>

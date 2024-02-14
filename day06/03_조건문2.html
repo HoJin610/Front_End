@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>조건문2</title>
+</head>
+
+<body>
+    
+</body>
+
+<script>
+    /*
+        switch - case문 기본구조
+
+        switch(조건변수){
+            case value1 :
+                조건변수의 값이 value1일 때 실행;
+                break;
+            case value2 :
+                조건변수의 값이 value2일 때 실행;
+                break;
+            case value3 :
+                조건변수의 값이 value3일 때 실행;
+                break;
+            case valueN :
+                조건변수의 값이 valueN일 때 실행;
+                break;
+            default : 
+                case의 변수 값이 어떤 조건에도 일치하지 않을 경우
+                break;
+        }
+    */
+
+   // Q. 좋아하는 계절을 입력받아서
+   // 좋아하는 계절이 "봄"일 경우 => "좋아하는 계절은 봄입니다." 를
+   // html에 출력!      => document.write() 안에 출력할 내용을 입력
+   // season 변수
+   // case "봄" :
+   
+   let season = prompt(`좋아하는 계절 입력`);
+
+//    switch(season){
+//         case "봄" :
+//             document.write(`좋아하는 계절은 ${season}입니다.`);
+//             break;
+//         case "여름" :
+//             document.write(`좋아하는 계절은 ${season}입니다.`);
+//             break;
+//         case "가을" :
+//             document.write(`좋아하는 계절은 ${season}입니다.`);
+//             break;
+//         case "겨울" :
+//             document.write(`좋아하는 계절은 ${season}입니다.`);
+//             break;
+//         default :
+//             document.write(`존재하지 않는 계절입니다.`)
+//             break;       
+//    }
+
+   switch(season){
+        case "봄" :
+        case "여름" :
+        case "가을" :
+        case "겨울" :
+            document.write(`좋아하는 계절은 ${season}입니다.`);
+            break;
+        default :
+            document.write(`존재하지 않는 계절입니다.`)
+            break;       
+   }
+</script>
+
+</html>

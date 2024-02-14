@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>ATM 만들기</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend><img src="./image/ATM.PNG"></legend>
+        <div>
+            <input type="text" id="txt" placeholder="금액을 입력하세요"><br/>
+            <input type="image" id="deposit" src="./image/입금.PNG" onclick="Account.deposit(parseInt(document.getElementById('txt').value))">
+            <input type="image" id="withdraw" src="./image/출금.PNG" onclick="Account.withdraw(parseInt(document.getElementById('txt').value))">
+            <input type="image" id="toString" src="./image/잔액.PNG" onclick="Account.toString()">
+            <div>
+                <h1 id="result"></h1>
+            </div>
+        </div>
+    </fieldset>
+</body>
+
+<script>
+    let Account = {};
+
+    Account.balance = 0;
+
+    Account.deposit = function(amount){
+        this.balance += amount;
+
+        let txt = document.getElementById('txt');
+        let result = document.getElementById('result');
+
+        result.innerHTML = `=============<br/><br/>${amount}원이 입금되었습니다.`;
+
+        txt.value = "";
+        txt.focus();
+    }
+
+    Account.withdraw = function(amount){
+        let result = document.getElementById('result');
+
+        if(this.balance >= amount){
+            this.balance -= amount;
+            result.innerHTML = `=============<br/><br/>${amount}원이 출금되었습니다.`
+        } else{
+            result.innerHTML = `=============<br/><br/>잔액이 ${amount - this.balance}원이 부족합니다.`;
+        }
+
+        let txt = document.getElementById('txt');
+
+        txt.value = "";
+        txt.focus();
+    }
+
+    Account.toString = function(){
+        let result = document.getElementById('result');
+
+        result.innerHTML = `=============<br/><br/>계좌잔액 : ${this.balance}원`;
+    }
+</script>
+
+</html>

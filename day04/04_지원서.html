@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>연습문제 2</title>
+    <style>
+        #container {
+            width:520px;
+            border:1px solid black;
+            padding:20px 40px;
+            margin:0 auto;
+        }
+        fieldset { margin-bottom:15px; }
+        legend { font-weight:bold; }
+        ul {list-style-type: none;}
+        li { line-height:30px;}
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>프런트엔드 개발자 지원서 </h1>
+    <p>HTML, CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+    <hr>
+    <form>
+        <p><strong>개인정보</strong></p>
+            <p style="margin: 0px 0px 0px 30px;">이름<input type="text" name="name" id="name" placeholder="공백없이입력해주세요"><br/></p>
+            <p style="margin: 0px 0px 0px 30px;">연락처<input type="text" name="phone" id="phone"><br/></p>
+
+        <p><strong>지원 분야</strong></p>
+            <p style="margin: 0px 0px 10px 30px;"><input type="radio" name="field" value="웹 퍼블리싱"/>웹 퍼블리싱</p>
+            <p style="margin: 0px 0px 10px 30px;"><input type="radio" name="field" value="웹 애플리케이션 개발"/>웹 애플리케이션 개발</p>
+            <p style="margin: 0px 0px 10px 30px;"><input type="radio" name="field" value="개발 환경 개선"/>개발 환경 개선</p>
+
+        <p><strong>지원동기</strong></p>
+            <textarea name="motive" id="motive" style="margin-bottom: 5px;" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea><br/>
+                <input type="submit" value="접수하기">
+                <input type="reset" value="다시 쓰기">
+    </form>
+</div>
+</body>
+</html>

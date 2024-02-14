@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="layout.css">
+
+    <title>div 레이아웃</title>
+</head>
+<body>
+    
+    <!-- div : 공간을 분할할때 사용하는 태그 -->
+    <!-- span : 글을 분할할때 사용하는 태그 -->
+
+    <div id="wrap">
+        <div id="header">
+            <ul> 
+                <a href="https://www.naver.com/"><li>NAVER</li></a>
+                <a href="https://www.google.com/"><li>Google</li></a>
+                <a href="https://www.daum.net/"><li>Daum</li></a>
+                <a href="https://www.youtube.com/"><li>Youtube</li></a>
+            </ul>
+        </div>
+        <div id="content">
+            <img src="../day02/urbanbrush-20220801083851022216.jpg" width="300px" height="150px">
+            <video src="../day02/media/Lake - 67201.mp4" controls width="300px" height="150px">
+                브라우저가 지원하지 않을 경우 출력
+            </video>
+            <iframe 
+                width="300" 
+                height="150" 
+                src="https://www.youtube.com/embed/6RQ-bBdASvk?si=4gm7eAgPGDFQxsZu" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div id="aside">
+            <audio src="../day02/media/Smurfs+Theme+Song.mp3" controls>
+                브라우저가 지원하지 않을 경우 출력
+            </audio>
+        </div>
+        <div id="footer">
+            <p>라즈베리 파이를 활용한 IoT서비스 개발자 양성과정</p>
+        </div>
+    </div>
+
+</body>
+</html>

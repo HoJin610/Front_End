@@ -1,0 +1,33 @@
+table, tr, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    /* 테이블의 선을 합친다. */
+}
+
+th{
+    width: 120px;
+    padding: 10px;
+}
+
+td{
+    width: 250px;
+    padding: 10px;
+}
+
+.tr3{
+    text-align: center;
+}
+
+.color{
+    color: red;
+}
+
+.image{
+    width: 100px;
+    height: 100px;
+}
+
+.font{
+    font-size: 20px;
+    margin-bottom: 20px;
+}

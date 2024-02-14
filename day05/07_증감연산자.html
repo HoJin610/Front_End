@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>증감연산자</title>
+</head>
+
+<body>
+    
+</body>
+
+<script>
+    /*
+        증감연산자(단항연산자)
+        : 증가(++), 감소(--) => 변수의 앞이나 뒤에 작성
+
+        let num = 1;
+
+        num++ : num이 가지고 있는 값을 연산에 적용한 뒤에 1증가
+        (계산을 하거나 출력을 할 경우 num값이 먼저 적용)
+        (그 다음에 사용되는 num에 +1을 하면 된다.)
+
+        ++num : num이 가지고 있는 값에 1을 증가한 뒤에 연산에 적용
+    */
+    let num = 1;
+
+    console.log(`(1) : ${num}`);    // 예상값 : 1
+    console.log(`(2) : ${num++}`);  // 예상값 : 1
+    console.log(`(3) : ${num}`);    // 예상값 : 2
+    console.log(`(4) : ${++num}`);  // 예상값 : 3
+    console.log(`(5) : ${num}`);    // 예상값 : 3
+
+    let num1 = 7;
+    let num2 = 2;
+
+    let result1 = ++num1 + ++num2;
+
+    console.log(`(1) : ${result1}`);    // 예상값 : 11
+    console.log(`(2) : ${num1}`);       // 예상값 : 8
+    console.log(`(3) : ${num2}`);       // 예상값 : 3
+
+    let result2 = num1++ + num2++;
+
+    console.log(`(4) : ${result2}`);    // 예상값 : 11
+    console.log(`(5) : ${num1}`);       // 예상값 : 9
+    console.log(`(6) : ${num2}`);       // 예상값 : 4
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+div{
+    border: 3px solid red;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+/* 
+    overflow : 요소의 크기 이상으로 내용이 넘쳤을 때, 보여짐을 제어하는 속성
+    (1) visible : 넘친 내용 그대로 보여준다(기본값 생략가능)
+
+    (2) hidden : 넘친 내용을 숨김
+    (3) scroll : 넘친 내용을 보이지 않게 함, 넘치지 않아도 스크롤바 생성
+    (4) auto : 넘친 내용을 보이지 않게 하고, 넘친 내용이 있을 경우에만 스크롤바 생성
+*/
+
+.hidden{
+    overflow: hidden;
+}
+
+.scroll{
+    overflow: scroll;
+}
+
+.auto{
+    overflow: auto;
+}

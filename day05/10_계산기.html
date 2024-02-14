@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>계산기</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>계산기</legend>
+        <input id="num1" type="text" placeholder="첫번째 숫자입력"><br/>
+        <input id="num2" type="text" placeholder="두번째 숫자입력"><br/>
+        <input type="button" value="+" onclick="sum()"/>
+        <input type="button" value="-" onclick="minus()"/>
+        <input type="button" value="*" onclick="multi()"/>
+        <input type="button" value="/" onclick="divide()"/>
+        <input type="button" value="C" onclick="clean()"><br/>
+
+        <div id="result">0</div>
+    </fieldset>
+</body>
+
+<script>
+
+    let num1;
+    let num2;
+
+    let result = document.getElementById("result");
+    // html문서에서 id가 "result"인 요소를 가져온다.
+
+    function insert(){
+        num1 = Number(document.getElementById("num1").value);
+        num2 = Number(document.getElementById("num2").value);
+    }
+
+    function sum(){
+        insert();
+        result.innerHTML = "<h1>" + (num1 + num2) + "</h1>";
+        // document.getElementById("result").innerHTML = (num1+num2);
+        // innerHTML : 해당 요소에 값을 html형식으로 넣는다.
+        // innerText : 해당 요소에 html형식이 아니라 문자 그대로 출력한다.
+
+        // document.getElementById("num1");
+        // <input id="num1" type="text" placeholder="첫번째 숫자입력">
+
+        // document.getElementById("num1").value;
+        // input태그에서 입력한 값이 들어온다. (string타입으로)
+
+        // Number(document.getElementById("num1").value);
+        // 입력한 값을 숫자 데이터 변환시킨다.
+
+        // 문자를 숫자로 바꾸는 방법
+        // (1) Number() : 입력한 값을 숫자 그대로 변환
+        // (2) parseInt() : 입력한 값을 정수로 변환
+    }
+
+    function minus(){
+        insert();
+        result.innerHTML = "<h1>" + (num1 - num2) + "</h1>";
+    }
+
+    function multi(){
+        insert();
+        result.innerHTML = "<h1>" + (num1 * num2) + "</h1>";
+    }
+
+    function divide(){
+        insert();
+        result.innerHTML = "<h1>" + (num1 / num2).toFixed(2) + "</h1>";
+        // toFixed(n) : 소숫점 n번째 자리까지 출력
+    }
+
+    function clean(){
+        document.getElementById("num1").value = "";
+        document.getElementById("num2").value = "";
+        result.innerHTML = "0";
+    }
+</script>
+
+</html>

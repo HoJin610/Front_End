@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>배열 예제</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>성적계산</legend>
+
+        <input type="text" id="score" placeholder="정수만 입력">
+        <br/><br/>
+        <input type="button" value="입력" onclick="input()">
+        <input type="button" value="출력" onclick="output()">
+        <input type="button" value="총점" onclick="sum()">
+
+        <h3>총점은<span id="sum"> 0</span>점 입니다.</h3>
+    </fieldset>
+</body>
+
+<script>
+    let arr = [];   // 배열선언
+    let idx = 0;    // 인덱스 번호
+
+    function input(){
+        let score = document.getElementById('score');
+
+        // document.getElementById('score');
+        // <input type="text" id="score" placeholder="정수만 입력">
+
+        let value = parseInt(score.value);
+        // 정수만 입력받기 위해 Number()를 사용하지 않고 parseInt() 사용
+
+        // 배열값 넣기
+        arr[idx] = value;
+        idx++;      // input()함수가 실행될 때마다 index번호가 1씩 증가
+
+        score.value = "";   // 입력버튼을 누르게 되면 입력창에 작성한 것을 초기화
+        score.focus();      // 초점이 입력창에 향하도록 한다.
+
+        sum();
+    }
+
+    function output(){
+        // console.log(arr);
+
+        // 반복문
+        for(let i in arr){
+            console.log(`arr[${i}] : ${arr[i]}`);
+        }
+    }
+
+    function sum(){
+        // 반복문을 사용해서 합계 구하기
+        let a = 0;
+        // #sum에 출력하기
+        for(let i in arr){
+            a += arr[i];
+        }
+        let sum = document.getElementById('sum');
+
+        sum.innerHTML = a;
+    }
+</script>
+
+</html>

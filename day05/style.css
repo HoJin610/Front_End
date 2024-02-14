@@ -1,0 +1,51 @@
+/* 
+    - 우선순위 : 같은 요소가 여러 선언의 대상이 되는 경우
+      어떤 선언의 css속성을 우선 적용할 건지 결정하는 방법
+
+    - 점수가 높은 선언 우선
+    - 점수가 같으면 마지막에 해석된 선언이 우선
+*/
+
+/* 전체 선택자 : 0점 */
+/* *{
+    color: darkblue;
+} */
+
+/* 태그 선택자 : 1점 */
+body{
+    color: violet;
+}
+
+div{
+    color: darkblue;
+}
+
+/* 클래스 선택자 : 10점 */
+.color_green{
+    color: green;
+}
+
+/* 아이디 선택자 : 100점 */
+#color_yellow1{
+    color: yellow;
+}
+
+#color_yellow2{
+    color: yellow;
+}
+
+/* 인라인 선언 : 1000점 */
+
+/* !important : 999999999점 */
+div{
+    color: red !important;
+}
+
+/* 점수, 등수 계산하기 */
+#submit span { color : red; }       /* 101점 ( 1등 ) */
+header .menu li:nth-child(2) { color : red; }   /* 22점 ( 2등 ) */
+.list li.hover { color : red; }     /* 21점 ( 3등 ) */
+.list li.item { color : red; }      /* 21점 ( 4등 ) */
+.box::before { color : red; }       /* 11점 ( 5등 ) */
+:not(.box) { color : red; }         /* 10점 ( 6등 ) */
+h1 { color : red; }                 /* 1점 ( 7등 ) */

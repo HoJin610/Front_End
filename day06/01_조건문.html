@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>조건문</title>
+</head>
+
+<body>
+    
+</body>
+
+<script>
+    /*
+        [1] if-else 조건문 문법
+
+        if(조건식 or 조건변수){
+            조건이 참(true)일 경우 실행
+        } else{
+            조건이 거짓(false)일 경우 실행
+        }
+    */
+
+    let condition = true;
+
+    if(condition){
+        alert(`조건변수 condition은 참(${condition}) 입니다.`)
+    }else{
+        alert(`조건변수 condition은 거짓(${condition}) 입니다.`)
+    }
+
+    /*
+        [2] if - else if - else 문법
+
+        if(조건1){
+            조건1이 참(true)일 경우 실행
+        } else if(조건n){
+            (조건1은 거짓이고)
+            조건n이 참(true)일 경우 실행
+        } else {
+            모든 조건이 거짓(false)일 경우 실행
+        }
+
+    */    
+
+    // prompt() : 입력창
+    let score = Number(prompt('점수 입력'));
+    let grade;
+
+    // 90 > score (x)
+    // score < 90 (o)
+
+    // 점수가 90점 이상이면 "A학점 입니다." 를 alert창으로 출력
+    // A : 90~ <- if
+
+    // B : 80~ <- else if
+    // C : 70~ <- else if
+    // D : 60~ <- else if
+
+    // F : 60미만 <- else
+
+    if(score >= 90){
+        grade = 'A';
+    }else if(score >= 80){
+        grade = 'B';
+    }else if(score >= 70){
+        grade = 'C';
+    }else if(score >= 60){
+        grade = 'D';
+    }else {
+        grade = 'F';
+    }
+
+    // 백틱(`)을 사용해서 문자열 안에 변수를 사용할 수 있다.
+    alert(`${grade}학점 입니다.`);
+
+</script>
+
+</html>

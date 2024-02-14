@@ -1,0 +1,29 @@
+/* [1]FIRST CHILD : 선택자 .fruits의 형제요소 중 첫째 요소가 span일 경우에"만" 실행 */
+.fruits span:first-child{
+    color: red;
+}
+
+/* [2]LAST CHILD : 선택자 .fruits의 형제요소 중 마지막 요소가 h3일 경우에"만" 실행 */
+.fruits h3:last-child{
+    color: blue;
+}
+
+/* [3]nth-child : 선택자 .fruits의 형제요소 중 n번째 요소 선택 */
+.fruits *:nth-child(3){
+    color: deepskyblue;
+}
+
+/* [4]nth-child(2n) : 선택자의 형제요소중 짝수 */
+.fruits *:nth-child(2n){
+    background-color: slateblue;
+}
+
+/* [5]nth-child(2n+1) : 선택자의 형제요소중 홀수 */
+.fruits *:nth-child(2n+1){
+    background-color: lightpink;
+}
+
+/* [6]not : 선택자가 아닌 요소를 선택 */
+.fruits *:not(div){
+    font-size: 30px;
+}

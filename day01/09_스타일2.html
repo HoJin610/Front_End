@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* body 영역의 배경색을 black으로 글씨 색상을 salmon으로 설정 */
+        body{
+            background-color: black;
+            color: salmon;
+        }
+
+        h1{
+            font-size: 10px;
+            color: yellow;
+            border: 2px inset violet;
+            /*      2px : 선굵기 inset : 선종류 violet : 선색상 */
+        }
+
+        h2{
+            color: aliceblue;
+            border: 2px solid darkblue;
+        }
+
+        h3{
+            color: antiquewhite;
+            border: 2px dashed darkcyan;
+        }
+
+        h4{
+            color: aqua;
+            border: 2px double darkgoldenrod;
+        }
+
+        h5{
+            color: aquamarine;
+            border: 2px groove darkgray;
+        }
+
+        h6{
+            color: azure;
+            border: 2px ridge darkgreen;
+        }
+
+        p{
+            background-color: beige;
+            color: black;
+        }
+        /* 
+            h2, h3, h4, h5, h6 
+            color : 마음대로 정하기    
+            
+            h2 : 2px solid red;
+            h3 : 2px dashed red;
+            h4 : 2px double red;
+            h5 : 2px groove red;
+            h6 : 2px ridge red;
+            
+        */
+    </style>
+    <title>스타일 적용2</title>
+</head>
+<body>
+    배경색은 검정색 입니다.
+    <h1>h1태그에 스타일 적용</h1>
+    <h2>h2태그에 스타일 적용</h2>
+    <h3>h3태그에 스타일 적용</h3>
+    <h4>h4태그에 스타일 적용</h4>
+    <h5>h5태그에 스타일 적용</h5>
+    <h6>h6태그에 스타일 적용</h6>
+
+    <p>p태그에 스타일 적용</p>
+    <p style="background-color: blueviolet; color: cadetblue; font-size: 50px;">p태그에 style속성으로 스타일 적용</p>
+    <!-- style태그에 작성한 내용보다 태그에 속성으로 지정한 것이 우선순위가 높다! -->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>객체 Object</title>
+</head>
+
+<body>
+    
+</body>
+
+<script>
+    /*
+        객체(Object) : 다른 것과 식별이 가능한 것
+        - 자신만의 고유한 특성과 행동을 가진다
+        - 다른 객체들과 상호작용이 가능하다
+
+        배열 선언하는 방법 2가지
+        - let arr1 = [];
+        - let arr2 = new Array();
+    */
+
+    // 객체를 선언하는 방법 2가지
+    let obj1 = {};
+    let obj2 = new Object();
+
+    // 키(key) : 값(value)
+    let car = {
+        company : "Tesla",
+        name : "ModelX",
+        type : "electric",
+        color : "white"
+    };
+
+    car.num = "321두1234";      // 기존 객체에 없는 키 : 추가
+    car.name = "ModelY";        // 기존 객체에 있던 키 : 덮어쓰기(수정)
+
+    console.log(car);
+
+    let person = new Object();
+
+    // person.name = "황인철";
+    person["name"] = "황인철";
+    person["age"] = 30;
+    person["phone"] = "010-1234-5678";
+    person.addr = "인천시 미추홀구 학익동";
+
+    console.log(person);
+
+    for(let i in car){
+        console.log(`i : ${i} | car[${i}] : ${car[i]}`);
+    }
+
+    for(let i in person){
+        console.log(`i : ${i} | person[${i}] : ${person[i]}`);
+    }
+</script>
+
+</html>

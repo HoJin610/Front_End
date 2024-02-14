@@ -1,0 +1,18 @@
+div{
+    width: 400px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 15px;
+    color: white;
+
+    display: inline-block;
+}
+
+p{
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 15px;
+    color: white;
+}

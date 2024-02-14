@@ -1,0 +1,32 @@
+/* 
+    - 선택자(Selector) : 스타일(css)을 적용할 대상
+
+        ex) 선택자 { 속성 : 값; }
+            div{ background-color : orange; }
+
+    - 속성(Propertiy) : 스타일(css)의 종류
+    - 값(value) : 속성에 따른 스타일의 값
+    
+*/
+
+/* [1] 전체 선택자(Universal Selector) : 모든 요소 선택 */
+*{
+    color: red;
+}
+
+/* [2] 태그 선택자(Type Selector) : 태그 이름 요소 선택 */
+li{
+    color: green;
+}
+
+/* [3] 클래스 선택자(Class Selector) : 클래스 속성값이 일치하는 요소 선택 */
+/* class="oran" 요소 */
+.oran{
+    color: orange;
+}
+
+/* [4] 아이디 선택자(Id Selector) : 아이디 속성값이 일치하는 요소 선택 */
+/* id="hpink" 요소 , id는 html문서 내에서 한번만 사용 가능 */
+#hpink{
+    color: hotpink;
+}

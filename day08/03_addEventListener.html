@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>addEventListener</title>
+</head>
+
+<body>
+    <!-- Q. 버튼1을 눌렀을 때 '버튼1을 클릭했습니다.' 라는
+            알림창을 띄우시오 -->
+    <input type="text" id="txt">
+    <h3 id="result">Focus</h3>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+</body>
+
+<script>
+    function btnClick1(){
+        alert('버튼1을 클릭했습니다.');
+    }
+
+    /*
+        (1) addEventListener : event를 깔끔하게 작업하기 위해 사용
+        (2) let 변수 = document.getElementById('id값');
+        (3) 변수.addEventListener(사용할 event, 실행할 function);
+    */
+
+   let btn1 = document.getElementById("btn1");
+   btn1.addEventListener("click", btnClick1);
+
+   let txt = document.getElementById("txt");
+   let result = document.getElementById("result");
+
+   // variable.addEventListener
+   txt.addEventListener("focusin", focusIn);
+   txt.addEventListener("focusout", focusOut);
+
+   function focusIn(){
+        result.innerHTML = "onFocus!";
+        txt.style.backgroundColor = "lightseagreen";
+   }
+
+   function focusOut(){
+        result.innerHTML = "onblur!";
+        txt.style.backgroundColor = "lightskyblue";
+   }
+
+   // 입력창에 내용을 입력하고 버튼2를 눌렀을 때
+   // 입력된 내용이 #result에 출력되도록 한다.
+
+   function result2(){
+        result.innerHTML = txt.value;
+   }
+
+   let btn2 = document.getElementById("btn2");
+   btn2.addEventListener("click", result2);
+   /* 
+        btn2.addEventListener("click", function(){
+
+        }); 
+   */
+  
+   //   btn2.addEventListener("click", ()=>);
+
+</script>
+
+</html>

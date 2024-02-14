@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>중첩for문</title>
+</head>
+
+<body>
+    <div id="result1"></div>
+</body>
+
+<script>
+    /*
+        중첩for문의 기본구조
+
+        for( 초기식 ; 조건식 ; 증감식 ){
+            for( 초기식 ; 조건식 ; 증감식 ){
+
+                실행문;
+
+            }
+        }
+    */
+
+    // Q. 중첩 for문을 사용해서 html문서의 div#result 요소에
+    //    구구단을 2단부터 9단까지 출력하시오.
+
+    let sum = 0;
+    let txt1 = "";
+
+    for(let i=2; i<=9; i++){
+        txt1 += `<br/>`;
+        for(let j=1; j<=9; j++){
+            sum = i * j;
+            txt1 += `${i} * ${j} = ${sum}<br>`;
+        }
+    }
+
+    let result1 = document.getElementById('result1');
+
+    result1.innerHTML = txt1;
+</script>
+
+</html>
