@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>사진 변경</title>
+</head>
+
+<body>
+    <button id="btn">이미지 변경</button><br />
+    <img id="image" src="../day02/urbanbrush-20220801083851022216.jpg" alt="사진" width="400px" height="400px">
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+<script>
+    // 문서 내에 있는 요소를 script로 가져오기
+
+    // 요소
+    // <button id="btn">이미지 변경</button>
+    // <img id="image" src="../day02/urban-20230228112910009385.jpg" alt="사진" width="400px" height="400px">
+
+    // id값을 기준으로
+    // jQeury 사용해서 담기
+    let btn = $("#btn");
+
+    // #btn => id="btn"
+    // $() => 문서 내에 있는 요소
+    // $("#btn") => 문서 내에 있는 id="btn"인 요소
+
+    // let btn = $("#btn");
+    // => <body>에 있는 id="btn"인 요소를 <script>에서 새로 만들어준 변수 btn에 담다
+
+    // 버튼을 클릭 했을 경우 (이름 없는)함수 실행
+    // btn.click(); 버튼을 클릭 했을 경우
+    // btn.click(()=>{}); (이름 없는)함수 실행
+    // btn.click(function(){});
+    // () => {}   <=>   function(){} 와 동일하다.
+    // { 중괄호 } 안에 실행할 내용 작성
+    let image = $("#image");
+    let i = 0;
+    let itv;
+
+    btn.click(() => {
+        clearInterval(itv);
+
+        itv = setInterval(() => {
+
+            if (i == 0) {
+                image.attr("src", "../day02/urban-20230228112910009385.jpg");
+                i++;
+            } else if (i == 1) {
+                image.attr("src", "");
+                image.removeAttr("alt");
+                i++;
+            } else if (i == 2) {
+                image.hide();
+                i++;
+            } else {
+                // attr("속성", "속성값");
+                // 기존에 속성이 있으면 변경
+                // 기존에 속성이 없으면 추가
+                image.attr("src", "../day02/urbanbrush-20220801083851022216.jpg");
+                image.attr("alt", "사진");
+                image.show();
+                i = 0;
+            }
+        }, 500);
+    });
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>타이밍 예제</title>
+</head>
+
+<body onload="timing()">
+    <!-- 
+        [1] 페이지가 로딩 된 후 : 5초 후에 Daum 페이지로 이동합니다.
+        [2] 5초에서 1초씩 줄어들고 0초가 되면 "페이지를 이동합니다" 알림창
+        [3] Daum 홈페이지로 이동
+
+        hint) body태그에서 onload 이벤트 사용
+     -->
+    <h1><span id="cnt">5</span>초 후에 Daum 페이지로 이동합니다.</h1>
+</body>
+
+<script>
+
+    // let myTime;
+
+    // let x = 5;
+
+    // let cnt = document.getElementById('cnt');
+
+    // function btnLoad() {
+    //     myTime = setInterval(() => {
+
+    //         x--;
+    //         cnt.innerHTML = x;
+    //     }, 1000);
+
+    //     setTimeout(() => {
+    //         alert("페이지를 이동합니다");
+    //         location.href = "https://www.daum.net/";
+    //         claerInterval(myTime);
+    //     }, 5000);
+    // }
+
+    function timing(){
+        //  <span id="cnt">5</span>
+        let cnt = document.getElementById("cnt");
+
+        let x = 5;
+
+        // 1초 마다 숫자가 1씩 줄어드는 것을 표현
+        setInterval(() => {
+            x--;
+            
+            if(x <= 0){
+                x = 0;
+            }
+
+            cnt.innerHTML = x;
+
+        }, 1000);
+
+        // 5초 후 페이지 이동
+        setTimeout(() => {
+            alert('페이지를 이동합니다.')
+            location.href="https://www.daum.net/";
+        }, 5000);
+    }
+</script>
+
+</html>

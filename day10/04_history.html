@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>history</title>
+</head>
+
+<body>
+    <button id="naver">네이버</button>
+    <button id="back">이전</button>
+    <button id="forward">다음</button>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+<script>
+    // 네이버 버튼 클릭시 네이버 페이지로 이동
+    let naver = $("#naver");
+
+    naver.click(() => {
+        location.href = "https://www.naver.com/";
+    });
+
+    // 이전 버튼 클릭시 이전 페이지로 이동
+    let back = $("#back");
+
+    back.click(() => {
+        window.history.back();
+    });
+
+    // 다음(앞) 버튼 클릭시 다음(앞) 페이지로 이동
+    let forward = $("#forward");
+
+    forward.click(() => {
+        window.history.forward();
+    });
+</script>
+
+</html>

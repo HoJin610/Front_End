@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>글자색 변경</title>
+</head>
+
+<body>
+    <button id="btn" class="btn1">색상 변경</button>
+    <h1 id="result">글자색이 변경됩니다.</h1>
+</body>
+
+<!-- jQuery 사용! -->
+
+<!-- [1] 파일 다운로드 -->
+<!-- <script src="./jquery-3.7.1.min.js"></script> -->
+
+<!-- [2] CDN 주소 사용 -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+<script>
+    // id="btn" 요소와 id="result" 요소를 script 변수에 담기
+    // let btn = document.getElementById('btn');
+    // let result = document.getElementById('result');
+    // let btn1 = document.getElementsByClassName("btn1");
+
+    // jQuery 변수 선언
+    // let 변수명 = $("선택자");
+    // 선택자 => id(#), class(.)등등
+    let btn = $("#btn");
+    let result = $("#result");
+    let btn1 = $(".btn1");
+
+    /*
+    btn.addEventListener("click", ()=>{
+        alert("버튼 클릭");
+    });
+    */
+    // jQuery 함수
+    // $("선택자").동작함수();
+    // $("#inputText").val();
+
+    let fColor = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+    let fSize = 27;     // h1태그 폰트사이즈 32px
+    let i = -1;
+    let itv;
+
+    // btn.click(() => {
+    //     i++;
+    //     if (i == fColor.length) {
+    //         i = 0;
+    //     }
+    //     result.css("color", fColor[i]);
+    // });
+
+    btn.click(() => {
+
+        clearInterval(itv);
+
+        itv = setInterval(()=>{
+            i++;
+            fSize += 5;     // fSize = fSize + 5;
+            if (i == fColor.length) {
+                i = 0;
+                fSize = 32;
+            }
+            result.css("color", fColor[i]);
+            result.css("font-size", `${fSize}px`);
+        }, 500);
+    });
+
+</script>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>타이밍</title>
+</head>
+
+<body>
+    <!-- <button onclick="btnFunc()">시작</button> -->
+    <button id="itv">시작</button>
+    <button id="stp">정지</button>
+    <button id="sto">3초후</button>
+    <h3 id="result">0</h3>
+
+</body>
+
+<script>
+    /*
+    // 시작 버튼을 눌렀을 경우 실행
+    function btnFunc(){
+
+    }
+
+    // 정지 버튼 요소 : <button id="stp">정지</button>
+    let stp = document.getElementById("stp");
+
+    //정지 버튼을 클릭했을 경우 btnStop() 함수 실행
+    stp.addEventListener("click", btnStop);
+
+    function btnStop(){
+
+    }
+    */
+
+    let myTime;
+
+    // 출력될 숫자
+    let x = 0;
+
+    let result = document.getElementById("result");
+
+    // 이름이 없는 함수를 실행하는 방법 : function(){} 대신 () => {} 사용가능
+    let itv = document.getElementById("itv");
+    itv.addEventListener("click", () => {
+        clearInterval(myTime);
+
+        // setInterval(function, milisecond)
+        // milisecond만큼 function을 계속(반복적으로) 실행한다.
+        // 1 second(1초) = 1000 milisecond
+        myTime = setInterval(() => {
+            x++;
+            result.innerHTML = x;
+        }, 1000);
+    });
+
+    let stp = document.getElementById("stp");
+    stp.addEventListener("click", () => {
+        clearInterval(myTime);
+        x = 0;
+        result.innerHTML = x;
+
+    });
+
+    let sto = document.getElementById("sto");
+    sto.addEventListener("click", () => {
+        // setTimeout(function, milisecond);
+        // milisecond가 지난 후에 function이 단 한번 실행!
+        setTimeout(() => {
+            alert("3초가 지났습니다.");
+        }, 3000);
+    });
+
+</script>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>현재시간</title>
+</head>
+
+<body>
+    <button id="live1">날짜</button>
+    <button id="live2">시간</button>
+    <h1 id="result1">날짜 출력</h1>
+    <h1 id="result2">시간 출력</h1>
+</body>
+
+<script>
+    // body에서 선언한 요소를 script에서 사용하기 위해 변수 선언
+    // document.getElementById("xx")
+    // document : html문서(body)에서
+    // getElementById : 요소 id가
+    // ("xx") : xx인 영역
+
+    // 요소(element) : <태그></태그> 혹은 <태그/> 로 이루어진 것
+
+    let live1 = document.getElementById('live1');
+    let live2 = document.getElementById('live2');
+    let result1 = document.getElementById('result1');
+    let result2 = document.getElementById('result2');
+
+    // Date() : 자바스크립트에서 제공하는 현재날짜시간 함수
+    let now = new Date();
+
+    console.log(now);   // Tue Oct 10 2023 10:23:29 GMT+0900 (한국 표준시)
+
+    let yy = now.getFullYear();     // 년도
+    let mm = now.getMonth() + 1;    // 월
+    let dd = now.getDate();         // 일
+    let days = now.getDay();        // 요일
+
+    console.log(`오늘 요일 : ${days}`);
+
+    // getDay() => 일:0, 월:1, 화:2, 수:3, 목:4, 금:5, 토6
+    let day = ['일', '월', '화', '수', '목', '금', '토'];
+
+    console.log(`오늘은 무슨 요일 : ${day[days]}`);
+
+    live1.addEventListener("click", () => {
+        result1.innerHTML = `${yy}년 ${mm}월 ${dd}일 ${day[days]}요일`;
+    });
+
+    //////////////////////// 시간관련 ////////////////////////
+    let hh = now.getHours();
+    let mi = now.getMinutes();
+    let ss = now.getSeconds();
+
+    live2.addEventListener("click", () => {
+
+        // hh = checkTime(hh);
+        // mi = checkTime(mi);
+        // ss = checkTime(ss);
+
+        // padStart : 문자열의 앞부분을 특정 길이로 채우는 역할
+        hh = String(hh).padStart(2, '0');
+        mi = String(mi).padStart(2, '0');
+        ss = String(ss).padStart(2, '0');
+
+        setInterval(() => {
+            now = new Date();
+            hh = now.getHours();
+            mi = now.getMinutes();
+            ss = now.getSeconds();
+
+            hh = String(hh).padStart(2, '0');
+            mi = String(mi).padStart(2, '0');
+            ss = String(ss).padStart(2, '0');
+        });
+
+        result2.innerHTML = `${hh}시 ${mi}분 ${ss}초`;
+    })
+
+    function checkTime(tt) {
+        if (tt < 10) {
+            tt = "0" + tt;
+        }
+        return tt;
+    }
+
+</script>
+
+</html>

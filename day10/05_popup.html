@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>팝업창</title>
+</head>
+
+<body>
+    <button id="pAlert">알림창</button>
+    <button id="pConfirm">선택창</button>
+    <button id="pPrompt">입력창</button>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+<script>
+    $("#pAlert").click(() => {
+        alert('알림창 입니다.');
+    });
+
+    $("#pConfirm").click(() => {
+        if (confirm('정말 삭제하시겠습니까?') == true) {
+            alert('삭제했습니다.');
+        } else {
+            alert('취소했습니다.');
+        }
+    });
+
+    $("#pPrompt").click(() => {
+        let stuName = prompt('당신의 이름은?');
+
+        if (stuName == "") {
+            console.log(`이름을 입력해주세요.`);
+        } else if (stuName == null) {
+            console.log(`취소했습니다.`);
+        } else {
+            console.log(`${stuName}님 환영합니다.`);
+        }
+    });
+</script>
+
+</html>

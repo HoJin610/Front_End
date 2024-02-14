@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <title>입력과 출력</title>
+</head>
+
+<body>
+    <h2>당신이 입력한 내용 : <span id="result"></span></h2><br />
+    <input type="text" id="txt" maxlength="11"><span id="cnt">(0자 입력)</span>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+<script>
+    let result = $("#result");
+    let txt = $("#txt");
+    let cnt = $("#cnt");
+
+    // txt.keyup(()=>{ 구현부 });
+
+    // txt.keyup(() => {
+    //     let val = txt.val();
+        
+    //     if (val.length > 0 && val.length < 5) {
+    //         cnt.css("color", "black");
+    //         result.html(val);
+    //         cnt.html(`(${val.length}자 입력)`);
+    //     } else if (val.length > 4 && val.length < 10) {
+    //         cnt.css("color", "orange");
+    //         result.html(val);
+    //         cnt.html(`(${val.length}자 입력)`);
+    //     } else if (val.length == 10) {
+    //         cnt.css("color", "red");
+    //         result.html(val);
+    //         cnt.html(`(${val.length}자 입력)`);
+    //     } else if (val.length > 10) {
+    //             alert("더 이상 입력할 수 없습니다.");
+    //     }
+    // });
+
+    txt.keyup(()=>{
+        let val = txt.val();
+
+        if(val.length >= 0 && val.length < 5){
+            cnt.css("color", "black");
+        }else if(val.length >= 5 && val.length < 10){
+            cnt.css("color", "orange");
+        }else if(val.length == 10){
+            cnt.css("color", "red");
+        }else{
+            cnt.css("color", "red");
+            alert('더 이상 입력할 수 없습니다.');
+
+            val = val.slice(0, 10);     // 인덱스 0번부터 보여주고, 10번부터 잘라낸다.
+            txt.val(val);
+        }
+        result.html(val);
+        cnt.html(`(${val.length}자 입력)`);
+    });
+</script>
+
+</html>
